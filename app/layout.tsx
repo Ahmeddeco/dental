@@ -2,6 +2,9 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { ClerkProvider } from "@clerk/nextjs"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
+import { dark, shadcn } from "@clerk/themes"
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -24,9 +27,17 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<ClerkProvider>
+		<ClerkProvider
+			appearance={{
+				baseTheme: shadcn,
+			}}
+		>
 			<html lang="en">
-				<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+				<body className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}>
+					<Header />
+					<main className="min-h-dvh pt-14 container mx-auto px-6">{children}</main>
+					<Footer />
+				</body>
 			</html>
 		</ClerkProvider>
 	)
