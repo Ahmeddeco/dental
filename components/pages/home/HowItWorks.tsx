@@ -9,7 +9,7 @@ import { howItWorksCards } from "@/constants/homePageConstants"
 
 export default function HowItWorks() {
 	return (
-		<section className="flex flex-col items-center gap-8 h-auto">
+		<section className="container mx-auto px-6 flex flex-col items-center gap-8 h-auto">
 			{/* ---------------------------------- TITLE --------------------------------- */}
 			<div className="flex flex-col items-center gap-4">
 				<Badge>

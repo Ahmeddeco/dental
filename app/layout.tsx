@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { ClerkProvider } from "@clerk/nextjs"
-import { dark, shadcn } from "@clerk/themes"
+import { shadcn } from "@clerk/themes"
 import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
 import { ThemeProvider } from "@/components/layout/theme-provider"
@@ -37,7 +37,7 @@ export default function RootLayout({
 				<body className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}>
 					<ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
 						<Header />
-						<main className="min-h-dvh pt-14 container mx-auto px-6">{children}</main>
+						<main className="min-h-dvh pt-14">{children}</main>
 						<Footer />
 					</ThemeProvider>
 				</body>
